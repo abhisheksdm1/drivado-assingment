@@ -18,7 +18,7 @@ export default function BookingForm() {
       </div>
       <div className="flex mb-3">
         <div className="mr-3 w-full border border-primaryGray2 p-3">
-          <div className="flex mb-3">
+          <div className="flex mb-2">
             <img src={pepole} />
             <p className="text-[12px]"> 3 Pax</p>
           </div>
