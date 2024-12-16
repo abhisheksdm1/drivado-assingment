@@ -47,7 +47,7 @@ const VehicleSelection = () => {
       <div className=" border rounded w-full border-primaryGray2  pr-6 pb-8">
         <div class="h-10 border-l-2 border-dotted border-primaryRed relative left-[34px] top-[89px]"></div>
 
-        <div className="flex font-manrope items-center">
+        <div className="flex font-manrope items-center justify-between">
           <div className="flex items-center justify-between">
             <img src={locationRed} />
             <div className=" inline-block">
@@ -63,7 +63,7 @@ const VehicleSelection = () => {
           </div>
         </div>
 
-        <div className="flex font-manrope items-center">
+        <div className="flex font-manrope items-center justify-between">
           <div className="flex items-center justify-between">
             <img src={locationGreen} />
             <div className=" inline-block">
@@ -73,7 +73,7 @@ const VehicleSelection = () => {
               <p className="text-[10px]">Dropoff Location</p>
             </div>
           </div>
-          <div className="pl-5">
+          <div className="pr-5">
             <h2 className="font-semibold text-[10px]">Pax</h2>
             <p className="text-[12px]">155 km</p>
           </div>
