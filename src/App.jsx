@@ -5,6 +5,7 @@ import HomeLayout from "./pages/HomeLayout";
 import Home from "./pages/Home";
 import VehicleSelection from "./pages/VechileSelection";
 import BookingForm from "./pages/BookingForm";
+import ConfirmationPage from "./pages/ConfirmationPage";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "booking-form",
         element: <BookingForm />,
+      },
+      {
+        path: "confirmation",
+        element: <ConfirmationPage />,
       },
     ],
   },

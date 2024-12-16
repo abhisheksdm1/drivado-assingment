@@ -27,11 +27,14 @@ export default {
         primaryRed: "#FB4156",
         primaryGray: "#F4F6F9",
         primaryGray2: "#EDEDED",
+        primarygray3: "#FAFAFA",
 
         // Replace with your desired color (e.g., gray-100)
       },
       colors: {
         primaryGray: "#C0C0C0",
+        primaryGray2: "#656565",
+        primaryGray3: "#6D6D6D",
         primaryRed: "#FB4156",
         wordBlack: "#2C2C2C",
         worldBlack2: "#1E1E1E",

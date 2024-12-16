@@ -4,19 +4,26 @@ import timer from "../assets/timer.png";
 import tick from "../assets/green-tick.png";
 import pepole from "../assets/pepole.png";
 import luggage from "../assets/luggage.png";
+import { useNavigate } from "react-router-dom";
 export default function BookingForm() {
+  const navigate = useNavigate();
+
+  const handleBooking = () => {
+    navigate("/confirmation");
+  };
+
   return (
     <div className="p-5 font-manrope">
-      <div className="w-full mb-3 border border-primaryGray2 p-3 flex items-center justify-between">
+      <div className="w-full mb-3 border bg-primarygray3 border-primaryGray2 p-3 flex items-center justify-between">
         <img src="" width={81} height={39} className="bg-red-500" />
         <h1 className="pl-2">STANDARD SEDAN</h1>
         <img src={dot} />
       </div>
-      <div className="mb-3 w-full border border-primaryGray2 p-3">
+      <div className=" bg-primarygray3 mb-3 w-full border border-primaryGray2 p-3">
         <h1>STANDARD SEDAN</h1>
         <p>xyz</p>
       </div>
-      <div className="flex mb-3">
+      <div className="flex mb-3 bg-primarygray3">
         <div className="mr-3 w-full border border-primaryGray2 p-3">
           <div className="flex mb-2">
             <img src={pepole} />
@@ -38,13 +45,13 @@ export default function BookingForm() {
           </div>
         </div>
       </div>
-      <div className="mb-3 w-full border border-primaryGray2 p-3">
+      <div className="mb-3 w-full border border-primaryGray2 bg-primarygray3 p-3">
         <p className="text-[12px]">
           Include VAT , Gratuties , Meet & Greet services
         </p>
         <h1 className="font-semibold text-[18px] text-primaryRed">USD 234</h1>
       </div>
-      <div className=" border border-primaryGray2 p-3">
+      <div className=" border border-primaryGray2 bg-primarygray3 p-3">
         <h1 className="font-bold pt-2 pb-2">Passenger Details</h1>
         <div className="mb-4">
           {" "}
@@ -93,7 +100,10 @@ export default function BookingForm() {
             placeholder="Enter your email"
           />{" "}
         </div>
-        <button className="w-full p-[12px_32px] text-white bg-primaryRed rounded">
+        <button
+          onClick={handleBooking}
+          className="w-full p-[12px_32px] text-white bg-primaryRed rounded"
+        >
           Confirm & Pay
         </button>
       </div>
