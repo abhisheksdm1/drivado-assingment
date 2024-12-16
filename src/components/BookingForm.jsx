@@ -1,6 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    navigate("/vechile");
+  };
   return (
     <div className="pr-50px pl-50px w-full mt-[50px] mb-[50px]">
       <div className="bg-white p-8 rounded-xl shadow-2xl w-full">
@@ -53,6 +58,7 @@ const Form = () => {
           <button
             type="submit"
             className="w-full bg-primaryRed text-white font-semibold py-2 rounded-md hover:bg-red-600"
+            onClick={handleSubmit}
           >
             Search
           </button>
