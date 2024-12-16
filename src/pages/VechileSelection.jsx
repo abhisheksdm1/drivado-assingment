@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import locationGreen from "../assets/locationGreen.png";
 import locationRed from "../assets/locationRed.png";
 import arrow from "../assets/arrow.png";
+import { useNavigate } from "react-router-dom";
 const vehicles = [
   {
     type: "Standard Sedan",
@@ -41,9 +42,15 @@ const vehicles = [
 ];
 
 const VehicleSelection = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handlechange = () => {
+    navigate("/booking-form");
+  };
 
   return (
     <div className="min-h-screen p-5  flex flex-col items-center">
@@ -104,7 +111,7 @@ const VehicleSelection = () => {
 
       <div className="font-manrope w-full border border-primaryGray2 rounded">
         {vehicles.map((vehicle, index) => (
-          <div>
+          <div onClick={handlechange}>
             <div key={index} className="flex p-4 justify-between ">
               <div className="flex ">
                 <div className="flex flex-col items-center">

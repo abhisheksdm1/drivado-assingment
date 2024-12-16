@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomeLayout from "./pages/HomeLayout";
 import Home from "./pages/Home";
 import VehicleSelection from "./pages/VechileSelection";
+import BookingForm from "./pages/BookingForm";
 
 const router = createBrowserRouter([
   {
@@ -19,10 +20,10 @@ const router = createBrowserRouter([
         path: "vechile",
         element: <VehicleSelection />,
       },
-      // {
-      //   path: "login",
-      //   element: <Login />,
-      // },
+      {
+        path: "booking-form",
+        element: <BookingForm />,
+      },
     ],
   },
 ]);

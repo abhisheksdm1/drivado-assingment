@@ -35,6 +35,7 @@ export default {
         primaryRed: "#FB4156",
         wordBlack: "#2C2C2C",
         worldBlack2: "#1E1E1E",
+        primaryGreen: "#65E469",
       },
     },
   },
