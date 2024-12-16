@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import locationGreen from "../assets/locationGreen.png";
 import locationRed from "../assets/locationRed.png";
 import arrow from "../assets/arrow.png";
@@ -41,6 +41,10 @@ const vehicles = [
 ];
 
 const VehicleSelection = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen p-5  flex flex-col items-center">
       {/* Header Section */}

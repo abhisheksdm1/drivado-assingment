@@ -78,6 +78,9 @@ const Footer = () => {
               <img src={instagram} />
             </a>
           </div>
+          <h1 className="p-5 font-lato font-bold text-[24px] text-center text-primaryRed">
+            Drivado
+          </h1>
         </div>
       </div>
     </footer>
