@@ -3,14 +3,21 @@ import logo from "../assets/logo.png";
 import client from "../assets/client.png";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/");
+  };
+
   return (
     <div className="flex pr-50px pl-50px bg-primaryBlack justify-between h-[70px]  items-center xl:h-[90px] md:h-[70px] pl-112px pr-112px">
       <img
         src={logo}
         alt="logo"
+        onClick={handleNavigate}
         className="w-[100px] h-[21px] md:w-[100px] h-[40px] xl:w-[177px] h-[57px]"
       />
       <div className="flex  items-center">

@@ -3,15 +3,23 @@ import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import twitter from "../assets/twitter.png";
 import whatsapp from "../assets/whatsapp.png";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/");
+  };
   return (
     <footer className="bg-primaryGray font-lato text-black p-5">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between">
           {/* Company Description */}
           <div className="mb-8 md:mb-0 md:w-1/3">
-            <h2 className="text-lg text-primaryRed font-semibold mb-4">
+            <h2
+              onClick={handleNavigate}
+              className="text-lg text-primaryRed font-semibold mb-4"
+            >
               Drivado
             </h2>
             <p>
@@ -78,7 +86,10 @@ const Footer = () => {
               <img src={instagram} />
             </a>
           </div>
-          <h1 className="p-5 font-lato font-bold text-[24px] text-center text-primaryRed">
+          <h1
+            onClick={handleNavigate}
+            className="p-5 font-lato font-bold text-[24px] text-center text-primaryRed"
+          >
             Drivado
           </h1>
         </div>

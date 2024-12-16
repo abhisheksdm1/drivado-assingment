@@ -1,27 +1,66 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import dot from "../assets/dot.png";
 import timer from "../assets/timer.png";
 import tick from "../assets/green-tick.png";
 import pepole from "../assets/pepole.png";
 import luggage from "../assets/luggage.png";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addBookingConformationData } from "../redux/bookingConformationSlice";
 export default function BookingForm() {
   const navigate = useNavigate();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const location = useLocation();
+  const { loading } = useSelector((state) => state.bookingConformationSlice);
+  const dispatch = useDispatch();
+  const {
+    data,
+    vechileName,
+    vechilePrice,
+    selectedOrigin,
+    selectedDestination,
+  } = location.state || {};
 
-  const handleBooking = () => {
+  const handleBooking = async () => {
+    const formData = {
+      carType: vechileName,
+      origin: selectedOrigin,
+      destination: selectedDestination,
+      date: data.date,
+      currency: data.currency,
+      paxCount: data.paxCount,
+      passengerDetails: {
+        firstName: firstName,
+        lastName: lastName,
+        contactNumber: phoneNumber,
+        email: email,
+      },
+    };
+    await dispatch(addBookingConformationData(formData)).unwrap();
     navigate("/confirmation");
+    setFirstName("");
+    setLastName("");
+    setPhoneNumber("");
+    setEmail("");
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="p-5 font-manrope">
       <div className="w-full mb-3 border bg-primarygray3 border-primaryGray2 p-3 flex items-center justify-between">
         <img src="" width={81} height={39} className="bg-red-500" />
-        <h1 className="pl-2">STANDARD SEDAN</h1>
+        <h1 className="pl-2">{vechileName}</h1>
         <img src={dot} />
       </div>
       <div className=" bg-primarygray3 mb-3 w-full border border-primaryGray2 p-3">
-        <h1>STANDARD SEDAN</h1>
-        <p>xyz</p>
+        <h1>{vechileName}</h1>
+        <p>(Corolla, Toyota Prius, Camry, Ford Taurus or similar)</p>
       </div>
       <div className="flex mb-3 bg-primarygray3">
         <div className="mr-3 w-full border border-primaryGray2 p-3">
@@ -49,7 +88,9 @@ export default function BookingForm() {
         <p className="text-[12px]">
           Include VAT , Gratuties , Meet & Greet services
         </p>
-        <h1 className="font-semibold text-[18px] text-primaryRed">USD 234</h1>
+        <h1 className="font-semibold text-[18px] text-primaryRed">
+          {vechilePrice}
+        </h1>
       </div>
       <div className=" border border-primaryGray2 bg-primarygray3 p-3">
         <h1 className="font-bold pt-2 pb-2">Passenger Details</h1>
@@ -58,8 +99,8 @@ export default function BookingForm() {
           <label className="block text-gray-700">First name*</label>{" "}
           <input
             type="text"
-            // value={firstName}
-            // onChange={(e) => setFirstName(e.target.value)}
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
             className="w-full mt-2 p-2 border rounded"
             placeholder="Enter your first name"
           />{" "}
@@ -70,8 +111,8 @@ export default function BookingForm() {
           <label className="block text-gray-700">Last name*</label>{" "}
           <input
             type="text"
-            // value={firstName}
-            // onChange={(e) => setFirstName(e.target.value)}
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
             className="w-full mt-2 p-2 border rounded"
             placeholder="Enter your last name"
           />{" "}
@@ -82,8 +123,8 @@ export default function BookingForm() {
           <label className="block text-gray-700"> Phone Number*</label>{" "}
           <input
             type="text"
-            // value={firstName}
-            // onChange={(e) => setFirstName(e.target.value)}
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
             className="w-full mt-2 p-2 border rounded"
             placeholder="Enter your phone number"
           />{" "}
@@ -94,8 +135,8 @@ export default function BookingForm() {
           <label className="block text-gray-700">Email*</label>{" "}
           <input
             type="email"
-            // value={firstName}
-            // onChange={(e) => setFirstName(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="w-full mt-2 p-2 border rounded"
             placeholder="Enter your email"
           />{" "}
@@ -104,7 +145,8 @@ export default function BookingForm() {
           onClick={handleBooking}
           className="w-full p-[12px_32px] text-white bg-primaryRed rounded"
         >
-          Confirm & Pay
+          Confirm & Pay&nbsp;
+          {loading && <span>Loading ...</span>}
         </button>
       </div>
     </div>
