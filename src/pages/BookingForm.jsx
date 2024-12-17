@@ -18,15 +18,14 @@ export default function BookingForm() {
   const dispatch = useDispatch();
   const {
     data,
-    vechileName,
-    vechilePrice,
+    vehicleName,
+    vehiclePrice,
     selectedOrigin,
     selectedDestination,
   } = location.state || {};
-
   const handleBooking = async () => {
     const formData = {
-      carType: vechileName,
+      carType: vehicleName,
       origin: selectedOrigin,
       destination: selectedDestination,
       date: data.date,
@@ -55,11 +54,11 @@ export default function BookingForm() {
     <div className="p-5 font-manrope">
       <div className="w-full mb-3 border bg-primarygray3 border-primaryGray2 p-3 flex items-center justify-between">
         <img src="" width={81} height={39} className="bg-red-500" />
-        <h1 className="pl-2">{vechileName}</h1>
+        <h1 className="pl-2">{vehicleName}</h1>
         <img src={dot} />
       </div>
       <div className=" bg-primarygray3 mb-3 w-full border border-primaryGray2 p-3">
-        <h1>{vechileName}</h1>
+        <h1>{vehicleName}</h1>
         <p>(Corolla, Toyota Prius, Camry, Ford Taurus or similar)</p>
       </div>
       <div className="flex mb-3 bg-primarygray3">
@@ -89,7 +88,7 @@ export default function BookingForm() {
           Include VAT , Gratuties , Meet & Greet services
         </p>
         <h1 className="font-semibold text-[18px] text-primaryRed">
-          {vechilePrice}
+          {vehiclePrice}
         </h1>
       </div>
       <div className=" border border-primaryGray2 bg-primarygray3 p-3">
