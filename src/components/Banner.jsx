@@ -7,7 +7,7 @@ export default function Banner() {
       <div className="block md:hidden">
         <div className="pl-50px pr-50px flex flex-col items-center ">
           <img src={bannerImage1} alt="banner" />
-          <h1 className="text-wordBlack font-manrope text-[40px] w-[500px] text-center font-bold mb-[50px]">
+          <h1 className="text-wordBlack font-manrope  text-[40px]  text-center font-bold mb-[50px]">
             We Offer Exceptional Comfort With 24/7 Access To Our{" "}
             <span className="text-primaryRed">
               <br className="md:hidden" />
@@ -32,11 +32,11 @@ export default function Banner() {
       </div>
       {/* laptop */}
       <div className="hidden md:block">
-        <div className=" flex items-start flex-row-reverse  pl-50px pr-50px p-10">
+        <div className=" flex items-start flex-row-reverse justify-between  pl-50px pr-50px p-10">
           <img src={bannerImage1} alt="banner" className="pr-10" />
 
           <div className="pt-10">
-            <h1 className="text-wordBlack font-manrope text-[30px]  font-bold mb-[10px]">
+            <h1 className="text-wordBlack font-manrope text-[30px] w-[500px]  font-bold mb-[10px]">
               We Offer Exceptional Comfort With 24/7 Access To Our{" "}
               <span className="text-primaryRed">
                 <br className="md:hidden" />

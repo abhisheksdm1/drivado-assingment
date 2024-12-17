@@ -6,6 +6,7 @@ import three from "../assets/3.png";
 import operationImg1 from "../assets/operationImg1.png";
 import operationImg2 from "../assets/operationImg2.png";
 import operationImg3 from "../assets/operationImg3.png";
+import line from "../assets/line.png";
 
 const services = [
   {
@@ -79,9 +80,14 @@ const OperationPage = () => {
       </div>
       {/* //laptop */}
       <div className="hidden md:block">
-        <div className="w-full flex justify-center font-lato pl-50px pr-50px">
+        <div className="w-full relative flex justify-center font-lato pl-50px pr-50px">
+          <img
+            src={line}
+            className="absolute left-1/2 -translate-x-1/2 top-[550px]  w-[600px] "
+          />
           <div className="bg-white p-8 w-full">
             {/* Header Image */}
+
             <div className="flex  justify-between items-center">
               <div className="mb-6">
                 <img
@@ -100,14 +106,14 @@ const OperationPage = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`mb-12 flex items-center justify-center mt-[50px] ${
+                className={`mb-12 flex items-center justify-between mt-[50px] ${
                   index !== 1 ? "flex-row-reverse" : "" // Apply flex-row-reverse only if index is not 1
                 }`}
               >
                 <img
                   src={service.banner}
                   alt={service.title}
-                  className="w-full h-full pr-5 pl-5 object-cover"
+                  className="w-[400px] h-[400px] pr-5 pl-5 object-cover"
                 />
 
                 <div className=" mb-4">
@@ -123,7 +129,9 @@ const OperationPage = () => {
                       {service.title}
                     </h2>
                   </div>
-                  <p className="text-gray-600">{service.description}</p>
+                  <p className="text-gray-600 w-[300px]">
+                    {service.description}
+                  </p>
                 </div>
               </div>
             ))}

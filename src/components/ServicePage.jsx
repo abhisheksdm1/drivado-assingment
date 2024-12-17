@@ -3,7 +3,6 @@ import serviceCarImag1 from "../assets/serviceCarImg1.png";
 import truck from "../assets/truck.png";
 import bag from "../assets/bag2.png";
 import fligt from "../assets/fligt.png";
-import line from "../assets/line.png";
 const services = [
   {
     title: "Warehousing Services",
@@ -71,10 +70,6 @@ const ServicePage = () => {
       {/* // laptop */}
       <div className="hidden md:block ">
         <div className="relative w-full font-lato pl-50px pr-50px">
-          <img
-            src={line}
-            className="absolute top-[980px] w-[500px] left-[200px]"
-          />
           <div className="bg-white p-8  w-full ">
             <div className="flex flex-row-reverse justify-between items-center">
               <div>
