@@ -83,7 +83,7 @@ const OperationPage = () => {
         <div className="w-full relative flex justify-center font-lato pl-50px pr-50px">
           <img
             src={line}
-            className="absolute left-1/2 -translate-x-1/2 top-[550px]  w-[600px] "
+            className="absolute mr-[50px] ml-[50px] pr-[50px] pl-[50px] left-1/2-translate-x-1/2 top-[550px]  w-[600px] h-[600px] "
           />
           <div className="bg-white p-8 w-full">
             {/* Header Image */}
@@ -106,14 +106,14 @@ const OperationPage = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`mb-12 flex items-center justify-between mt-[50px] ${
+                className={`mb-12 flex items-center justify-center mt-[50px] ${
                   index !== 1 ? "flex-row-reverse" : "" // Apply flex-row-reverse only if index is not 1
                 }`}
               >
                 <img
                   src={service.banner}
                   alt={service.title}
-                  className="w-[400px] h-[400px] pr-5 pl-5 object-cover"
+                  className="w-[400px] h-[400px]  pr-5 pl-5 object-cover"
                 />
 
                 <div className=" mb-4">
