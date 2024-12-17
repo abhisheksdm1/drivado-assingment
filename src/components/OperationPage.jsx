@@ -33,44 +33,103 @@ const services = [
 
 const OperationPage = () => {
   return (
-    <div className="w-full flex justify-center font-lato pl-50px pr-50px">
-      <div className="bg-white p-8  w-full max-w-md">
-        {/* Header Image */}
-        <div className="mb-6">
-          <img
-            src={serviceCarImag1}
-            alt="Service Car"
-            className="w-[100px] h-[100px]"
-          />
-        </div>
-        {/* Heading */}
-        <h1 className="text-2xl font-bold mb-6 text-left">
-          <span className="border-b-2 border-primaryRed">Operation</span> Mode
-        </h1>
-        {/* Service List */}
-        {services.map((service, index) => (
-          <div key={index} className="mb-12 mt-[50px]">
-            <img
-              src={service.banner}
-              alt={service.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 mr-4">
+    <div>
+      <div className="block md:hidden">
+        <div className="w-full flex justify-center font-lato pl-50px pr-50px">
+          <div className="bg-white p-8  w-full max-w-md">
+            {/* Header Image */}
+            <div className="mb-6">
+              <img
+                src={serviceCarImag1}
+                alt="Service Car"
+                className="w-[100px] h-[100px]"
+              />
+            </div>
+            {/* Heading */}
+            <h1 className="text-2xl font-bold mb-6 text-left">
+              <span className="border-b-2 border-primaryRed">Operation</span>{" "}
+              Mode
+            </h1>
+            {/* Service List */}
+            {services.map((service, index) => (
+              <div key={index} className="mb-12 mt-[50px]">
                 <img
-                  src={service.icon}
-                  alt={`${service.title} Icon`}
-                  className="w-full h-full object-contain"
+                  src={service.banner}
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 mr-4">
+                    <img
+                      src={service.icon}
+                      alt={`${service.title} Icon`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <h2 className="text-xl font-semibold text-primaryRed">
+                    {service.title}
+                  </h2>
+                </div>
+                <p className="text-gray-600">{service.description}</p>
+              </div>
+            ))}
+            {/* Buttons */}
+          </div>
+        </div>
+      </div>
+      {/* //laptop */}
+      <div className="hidden md:block">
+        <div className="w-full flex justify-center font-lato pl-50px pr-50px">
+          <div className="bg-white p-8 w-full">
+            {/* Header Image */}
+            <div className="flex  justify-between items-center">
+              <div className="mb-6">
+                <img
+                  src={serviceCarImag1}
+                  alt="Service Car"
+                  className="w-[100px] h-[100px]"
                 />
               </div>
-              <h2 className="text-xl font-semibold text-primaryRed">
-                {service.title}
-              </h2>
+              {/* Heading */}
+              <h1 className="text-2xl font-bold mb-6 text-left mr-10">
+                <span className="border-b-2 border-primaryRed">Operation</span>{" "}
+                Mode
+              </h1>
             </div>
-            <p className="text-gray-600">{service.description}</p>
+            {/* Service List */}
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className={`mb-12 flex items-center justify-center mt-[50px] ${
+                  index !== 1 ? "flex-row-reverse" : "" // Apply flex-row-reverse only if index is not 1
+                }`}
+              >
+                <img
+                  src={service.banner}
+                  alt={service.title}
+                  className="w-full h-full pr-5 pl-5 object-cover"
+                />
+
+                <div className=" mb-4">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 mr-4">
+                      <img
+                        src={service.icon}
+                        alt={`${service.title} Icon`}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <h2 className="text-xl font-semibold text-primaryRed">
+                      {service.title}
+                    </h2>
+                  </div>
+                  <p className="text-gray-600">{service.description}</p>
+                </div>
+              </div>
+            ))}
+            {/* Buttons */}
           </div>
-        ))}
-        {/* Buttons */}
+        </div>
       </div>
     </div>
   );

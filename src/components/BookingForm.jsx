@@ -81,87 +81,178 @@ const Form = () => {
   };
 
   return (
-    <div className="pr-50px pl-50px w-full mt-[50px] mb-[50px]">
-      <div className="bg-white p-8 rounded-xl shadow-2xl w-full">
-        <div className="relative border border-gray-400 rounded-lg p-3 mt-4 mb-2">
-          <label className="absolute top-[-10px] left-3 bg-white text-gray-600 px-1 text-sm">
-            Origin
-          </label>
-          <select
-            value={selectedOrigin}
-            onChange={handleSelectChangeOrigin}
-            className="w-full border-0 p-2 text-gray-600 h-[50px] "
-          >
-            <option value="" disabled selected>
-              Select Origin
-            </option>
-            {address.map((item) => (
-              <option value={item.address}>{item.address}</option>
-            ))}
-          </select>
-        </div>
+    <div>
+      <div className="block md:hidden">
+        <div className=" pr-50px pl-50px  w-full mt-[50px] mb-[50px]">
+          <div className="bg-white p-8  rounded-xl shadow-2xl w-full">
+            <div className="relative border  border-gray-400 rounded-lg p-3 mt-4 mb-2">
+              <label className="absolute top-[-10px] left-3 bg-white text-gray-600 px-1 text-sm">
+                Origin
+              </label>
+              <select
+                value={selectedOrigin}
+                onChange={handleSelectChangeOrigin}
+                className="w-full border-0 p-2 text-gray-600 h-[50px] "
+              >
+                <option value="" disabled selected>
+                  Select Origin
+                </option>
+                {address.map((item) => (
+                  <option value={item.address}>{item.address}</option>
+                ))}
+              </select>
+            </div>
 
-        <div className="relative border border-gray-400 rounded-lg p-3 mt-4">
-          <label className="absolute top-[-10px] left-3 bg-white text-gray-600 px-1 text-sm">
-            Destination
-          </label>
-          <select
-            value={selectedDestination}
-            onChange={handleSelectChangeDestination}
-            className="w-full border-0 p-2 focus:outline-none h-[50px]  text-gray-700"
-          >
-            <option value="" disabled selected>
-              Select Destination
-            </option>
-            {address.map((item) => (
-              <option value={item.address}>{item.address}</option>
-            ))}
-          </select>
-        </div>
+            <div className="relative border border-gray-400 rounded-lg p-3 mt-4">
+              <label className="absolute top-[-10px] left-3 bg-white text-gray-600 px-1 text-sm">
+                Destination
+              </label>
+              <select
+                value={selectedDestination}
+                onChange={handleSelectChangeDestination}
+                className="w-full border-0 p-2 focus:outline-none h-[50px]  text-gray-700"
+              >
+                <option value="" disabled selected>
+                  Select Destination
+                </option>
+                {address.map((item) => (
+                  <option value={item.address}>{item.address}</option>
+                ))}
+              </select>
+            </div>
 
-        <div className="relative border border-gray-400 rounded-lg p-3 mt-4">
-          <label className="absolute top-[-10px] left-3 bg-white text-gray-600 px-1 text-sm">
-            Date
-          </label>
-          <input
-            value={date}
-            type="date"
-            onChange={(e) => setDate(e.target.value)}
-            className="w-full border-0 p-2 focus:outline-none h-[20px]"
-          />
-        </div>
-        <div className="relative border border-gray-400 rounded-lg p-3 mt-4">
-          <label className="absolute top-[-10px] h-[20px] left-3 bg-white text-gray-600 px-1 text-sm">
-            Pax Count
-          </label>
-          <input
-            value={pax}
-            type="text"
-            onChange={(e) => setPax(e.target.value)}
-            className="w-full border-0 p-2 focus:outline-none h-[20px]"
-          />
-        </div>
+            <div className="relative border border-gray-400 rounded-lg p-3 mt-4">
+              <label className="absolute top-[-10px] left-3 bg-white text-gray-600 px-1 text-sm">
+                Date
+              </label>
+              <input
+                value={date}
+                type="date"
+                onChange={(e) => setDate(e.target.value)}
+                className="w-full border-0 p-2 focus:outline-none h-[20px]"
+              />
+            </div>
+            <div className="relative border border-gray-400 rounded-lg p-3 mt-4">
+              <label className="absolute top-[-10px] h-[20px] left-3 bg-white text-gray-600 px-1 text-sm">
+                Pax Count
+              </label>
+              <input
+                value={pax}
+                type="text"
+                onChange={(e) => setPax(e.target.value)}
+                className="w-full border-0 p-2 focus:outline-none h-[20px]"
+              />
+            </div>
 
-        <div className="relative border border-gray-400 rounded-lg p-3 mt-4">
-          <label className="absolute top-[-10px] left-3 bg-white text-gray-600 px-1 text-sm">
-            Currency
-          </label>
-          <input
-            value={currency}
-            onChange={(e) => setCurrency(e.target.value)}
-            type="text"
-            className="w-full h-[20px] border-0 p-2 focus:outline-none"
-          />
+            <div className="relative border border-gray-400 rounded-lg p-3 mt-4">
+              <label className="absolute top-[-10px] left-3 bg-white text-gray-600 px-1 text-sm">
+                Currency
+              </label>
+              <input
+                value={currency}
+                onChange={(e) => setCurrency(e.target.value)}
+                type="text"
+                className="w-full h-[20px] border-0 p-2 focus:outline-none"
+              />
+            </div>
+            <div className="mt-5">
+              <button
+                type="submit"
+                className="w-full bg-primaryRed text-white font-semibold py-2 rounded-md hover:bg-red-600"
+                onClick={handleSubmit}
+              >
+                Search&nbsp;
+                {loading && <span>Loading...</span>}
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="mt-5">
-          <button
-            type="submit"
-            className="w-full bg-primaryRed text-white font-semibold py-2 rounded-md hover:bg-red-600"
-            onClick={handleSubmit}
-          >
-            Search&nbsp;
-            {loading && <span>Loading...</span>}
-          </button>
+      </div>
+      {/* // laptop */}
+      <div className="hidden md:block">
+        <div className=" pr-50px pl-50px  w-full mt-[50px] mb-[50px]">
+          <div className="bg-white p-8 grid grid-cols-3 gap-4 rounded-xl shadow-2xl w-full">
+            <div className="relative border  border-gray-400 rounded-lg p-3 mt-4 ">
+              <label className="absolute top-[-10px] left-3 bg-white text-gray-600 px-1 text-sm">
+                Origin
+              </label>
+              <select
+                value={selectedOrigin}
+                onChange={handleSelectChangeOrigin}
+                className=" w-full border-0 p-2 text-gray-600 h-[50px] "
+              >
+                <option value="" disabled selected>
+                  Select Origin
+                </option>
+                {address.map((item) => (
+                  <option value={item.address}>{item.address}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="relative border border-gray-400 rounded-lg p-3 mt-4">
+              <label className="absolute top-[-10px] left-3 bg-white text-gray-600 px-1 text-sm">
+                Destination
+              </label>
+              <select
+                value={selectedDestination}
+                onChange={handleSelectChangeDestination}
+                className="w-full border-0 p-2 focus:outline-none h-[50px]  text-gray-700"
+              >
+                <option value="" disabled selected>
+                  Select Destination
+                </option>
+                {address.map((item) => (
+                  <option value={item.address}>{item.address}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="relative border border-gray-400 rounded-lg p-3 mt-4">
+              <label className="absolute top-[-10px] left-3 bg-white text-gray-600 px-1 text-sm">
+                Date
+              </label>
+              <input
+                value={date}
+                type="date"
+                onChange={(e) => setDate(e.target.value)}
+                className="w-full border-0 p-2 focus:outline-none h-[50px]"
+              />
+            </div>
+            <div className="relative border border-gray-400 rounded-lg p-3 mt-4">
+              <label className="absolute top-[-10px] h-[20px] left-3 bg-white text-gray-600 px-1 text-sm">
+                Pax Count
+              </label>
+              <input
+                value={pax}
+                type="text"
+                onChange={(e) => setPax(e.target.value)}
+                className="w-full border-0 p-2 focus:outline-none h-[20px]"
+              />
+            </div>
+
+            <div className="relative border border-gray-400 rounded-lg p-3 mt-4">
+              <label className="absolute top-[-10px] left-3 bg-white text-gray-600 px-1 text-sm">
+                Currency
+              </label>
+              <input
+                value={currency}
+                onChange={(e) => setCurrency(e.target.value)}
+                type="text"
+                className="w-full h-[20px] border-0 p-2 focus:outline-none"
+              />
+            </div>
+            <div className="mt-4">
+              <button
+                type="submit"
+                className=" w-full h-[70px] bg-primaryRed text-white font-semibold py-2 rounded-md hover:bg-red-600"
+                onClick={handleSubmit}
+              >
+                Search&nbsp;
+                {loading && <span>Loading...</span>}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

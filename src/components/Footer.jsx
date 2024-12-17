@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between">
           {/* Company Description */}
-          <div className="mb-8 md:mb-0 md:w-1/3">
+          <div className="mb-8 md:mb-0 md:w-1/3 pr-10">
             <h2
               onClick={handleNavigate}
               className="text-lg text-primaryRed font-semibold mb-4"
@@ -71,28 +71,30 @@ const Footer = () => {
             </ul>
           </div>
           {/* Social Media Icons */}
-          <div className="pl-5 font-semibold">Social Media</div>
-          <div className="pl-5 md:w-1/6 flex justify-center md:justify-start">
-            <a href="#" className="mx-2 text-gray-400 hover:text-white">
-              <img src={facebook} />
-            </a>
-            <a href="#" className="mx-2 text-gray-400 hover:text-white">
-              <img src={twitter} />
-            </a>
-            <a href="#" className="mx-2 text-gray-400 hover:text-white">
-              <img src={whatsapp} />
-            </a>
-            <a href="#" className="mx-2 text-gray-400 hover:text-white">
-              <img src={instagram} />
-            </a>
+          <div className="flex flex-col">
+            <div className="pl-5 font-semibold">Social Media</div>
+            <div className="pl-5  flex justify-center md:justify-start">
+              <a href="#" className="mx-2 text-gray-400 hover:text-white">
+                <img src={facebook} />
+              </a>
+              <a href="#" className="mx-2 text-gray-400 hover:text-white">
+                <img src={twitter} />
+              </a>
+              <a href="#" className="mx-2 text-gray-400 hover:text-white">
+                <img src={whatsapp} />
+              </a>
+              <a href="#" className="mx-2 text-gray-400 hover:text-white">
+                <img src={instagram} />
+              </a>
+            </div>
           </div>
-          <h1
-            onClick={handleNavigate}
-            className="p-5 font-lato font-bold text-[24px] text-center text-primaryRed"
-          >
-            Drivado
-          </h1>
         </div>
+        <h1
+          onClick={handleNavigate}
+          className="p-5 font-lato font-bold text-[24px] text-center text-primaryRed"
+        >
+          Drivado
+        </h1>
       </div>
     </footer>
   );

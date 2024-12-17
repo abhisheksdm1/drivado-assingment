@@ -18,7 +18,7 @@ export default {
       },
       screens: {
         md: "834px",
-        xl: "1420px",
+        xl: "1220px",
         "2xl": "1920px", // Customizing the 2xl breakpoint to 1420px
       },
       backgroundColor: {
