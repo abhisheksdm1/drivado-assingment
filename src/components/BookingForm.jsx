@@ -227,7 +227,7 @@ const Form = () => {
                 value={pax}
                 type="text"
                 onChange={(e) => setPax(e.target.value)}
-                className="w-full border-0 p-2 focus:outline-none h-[20px]"
+                className="w-full border-0 focus:outline-none h-[40px]"
               />
             </div>
 
@@ -239,7 +239,7 @@ const Form = () => {
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value)}
                 type="text"
-                className="w-full h-[20px] border-0 p-2 focus:outline-none"
+                className="w-full h-[40px] border-0  focus:outline-none"
               />
             </div>
             <div className="mt-4">
