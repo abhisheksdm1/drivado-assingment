@@ -39,7 +39,7 @@ export default function ConfirmationPage() {
           </p>
         </div>
 
-        <div className="flex p-5 justify-between ">
+        <div className="flex mr-5 ml-5 justify-between ">
           <h1 className="font-bold text-[20px]">Invoice</h1>
           <div className="text-right">
             <p className="">Booking ID</p>
@@ -49,16 +49,11 @@ export default function ConfirmationPage() {
           </div>
         </div>
         <hr className=" mr-5 ml-5 "></hr>
-        <div className="p-5">
-          <div className="h-12 border-l-2 border-dotted border-primaryRed relative left-[6px] top-[70px]"></div>
+        <div className="pb-5 mr-5 ml-5">
+          <div className="h-8 border-l-2 border-dotted border-primaryRed relative left-[6px] top-[50px]"></div>
 
-          <div className="flex items-start">
-            <img
-              src={navigation1}
-              className="mr-5 mt-3"
-              width={14}
-              height={14}
-            />
+          <div className="flex items-center">
+            <img src={navigation1} className="mr-5 " width={14} height={14} />
             <h1 className="font-semibold text-[14px] ">
               {bookingDetails.bookingDetails.origin}
             </h1>
@@ -67,7 +62,7 @@ export default function ConfirmationPage() {
           <div className="flex items-start">
             <img
               src={navigation2}
-              className="mr-5 mt-3"
+              className="mr-5 mt-2"
               width={14}
               height={14}
             />
