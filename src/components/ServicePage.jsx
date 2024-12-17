@@ -91,7 +91,7 @@ const ServicePage = () => {
               {services.map((service, index) => (
                 <div key={index} className="mb-[50px] mt-[50px]">
                   <div className=" mb-2">
-                    <div className="w-full  h-12 mr-4">
+                    <div className="w-[250px]  h-12 mr-4">
                       <img
                         src={service.icon}
                         alt={service.title}

@@ -7,7 +7,7 @@ export default function Banner() {
       <div className="block md:hidden">
         <div className="pl-50px pr-50px flex flex-col items-center ">
           <img src={bannerImage1} alt="banner" />
-          <h1 className="text-wordBlack font-manrope text-[40px] text-center font-bold mb-[50px]">
+          <h1 className="text-wordBlack font-manrope text-[40px] w-[500px] text-center font-bold mb-[50px]">
             We Offer Exceptional Comfort With 24/7 Access To Our{" "}
             <span className="text-primaryRed">
               <br className="md:hidden" />
