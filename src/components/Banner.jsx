@@ -32,7 +32,7 @@ export default function Banner() {
       </div>
       {/* laptop */}
       <div className="hidden md:block">
-        <div className=" flex items-start flex-row-reverse justify-around  pl-50px pr-50px p-10">
+        <div className=" flex items-start flex-row-reverse justify-between  pl-50px pr-50px p-10">
           <img src={bannerImage1} alt="banner" className="pr-10" />
 
           <div className="pt-10">
